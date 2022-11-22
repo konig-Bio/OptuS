@@ -1,0 +1,1781 @@
+@import url(//db.onlinewebfonts.com/c/72112afab388987941068c3f7a741a53?family=Mark+Pro+Heavy);
+
+
+$ipadmini: 481px;
+$ipad: 767px;
+$desktop: 1024px;
+$bigdesktop: 1280px;
+
+@mixin ipadmini {
+    @media (min-width: #{$ipadmini}) {
+        @content;
+    }
+};
+
+@mixin ipad {
+    @media (min-width: #{$ipad}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin bigdesktop {
+    @media (min-width: #{$bigdesktop}) {
+        @content;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        margin-top: -.5em;
+
+
+        @include ipad() {
+            display: none;
+        }
+
+
+        .horizontal-nav {
+            display: flex;
+            align-items: center;
+            margin-right: .4em;
+            gap: 1em;
+    
+            .fa-phone-volume {
+                transform: rotateY(180deg);
+            }
+    
+            .fa-bars {
+                margin-left: 1em;
+                font-size: 22px;
+            }
+            .logo {
+                font-size: 22px;
+                font-weight: 900;
+                color: #01828E;
+                font-family: arial;
+            }
+        }
+    }
+
+
+    .section-two {
+        margin-top: -.6em;
+        width: 100%;
+        background: #030402;
+        height: 1200px;
+        padding-top: 1em;
+
+        @include ipadmini() {
+            height: 1000px;
+        }
+
+        @include ipad() {
+            height: 1100px
+        }
+        @include desktop() {
+            height: 800px;
+        }
+
+        @include bigdesktop() {
+            height: 1200px;
+        }
+
+
+        .section-two-content {
+            
+            width: 100%;
+            margin-top: 10em;
+
+
+
+            .hide-header {
+                display: none;
+                background: white;
+                width: 99%;
+                border: 1px solid black;
+
+
+                @include ipad() {
+                    display: block;
+                    margin-top: -9em;
+                }
+
+
+                .businesss-main-box {
+                    display: flex;
+                    justify-content: space-between;
+
+
+
+                    .businx {
+                        display: flex;
+                        align-items: center;
+                        gap: .8em;
+                        margin-left: 1em;
+                        margin-right: 1em;
+                        cursor: pointer;
+
+
+                        @include desktop() {
+                            gap: .5em;
+                        }
+
+                        @include bigdesktop() {
+                            gap: .8em;
+                        }
+                        
+
+
+                        .businx-text {
+                            
+                            
+
+                            @include desktop() {
+                                font-size: 20px;
+                                font-family: sans-serif;
+                                font-weight: bold;
+                            }
+
+                            @include bigdesktop() {
+                                font-size: 25px;
+                            }
+
+                            
+                        }
+                        .businx-text:hover {
+                            color: orange;
+                            text-decoration: underline;
+                        }
+
+
+
+                        #text-businx {
+                            font-size: 21px;
+                            font-weight: bolder;
+                            color: #006670;
+
+
+                            @include desktop() {
+                                margin: 0;
+                                font-size: 35px;
+                            }
+                        }
+                    }
+
+                    .sec-phase {
+                        display: flex;
+                        align-items: center;
+                        gap: .2em;
+
+                        @include desktop() {
+                            font-size: 20px;
+                            font-weight: bold;
+                            font-family: sans-serif;
+                        }
+
+
+                        .sec-phase-text {
+                            font-size: 25px;
+
+                            @include desktop() {
+                                font-size: 20px;
+                            }
+                        }
+
+                        .sec-phase-text:hover {
+                            color: orange;
+                            text-decoration: underline;
+                        }
+                        .fa-phone-volume {
+                            transform: rotateY(180deg);
+
+                            @include bigdesktop() {
+                                font-size: 30px;
+                            }
+                        }
+                        
+
+                        .fa-magnifying-glass {
+                            
+                            @include bigdesktop() {
+                                font-size: 30px;
+                            }
+                        }
+                        
+
+                        .fa-cart-shopping {
+
+
+                            @include bigdesktop() {
+                                font-size: 30px;
+                            }
+                        }
+
+                        .fa-user {
+
+
+                            @include bigdesktop() {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+
+                    .sec-phase:hover {
+                        color: orange;
+                    }
+                }
+
+                .lline {
+                    width: 100%;
+                    border: .1px solid rgba($color: #000000, $alpha: .25);
+                }
+
+                .under-header {
+                    display: flex;
+                    gap: .4em;
+                    margin-left: 1em;
+                    margin-right: 1em;
+                    cursor: pointer;
+
+
+                    @include desktop() {
+                        display: flex;
+                        justify-content: space-between;
+                        font-family: sans-serif;
+                    }
+
+                    @include bigdesktop() {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .shop {
+                        display: flex;
+                        align-items: center;
+                        gap: .1em;
+                    }
+
+                    p {
+
+
+                        @include bigdesktop() {
+                            font-size: 22px;
+                        }
+                    }
+                    p:hover {
+                        color: orange;
+                        text-decoration: underline;
+                    }
+
+                    .red {
+                        color: red;
+                    }
+                }
+               
+            }
+
+
+
+            .content {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 2.5em;
+                margin-top: -4em;
+
+
+                @include ipadmini {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1em;
+                }
+
+                @include desktop() {
+                    margin-left: 10em;
+                }
+
+                @include bigdesktop() {
+                    margin-left: 10em;
+                }
+
+
+                .text-22 {
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+
+                    @include ipadmini {
+                        display: flex;
+                        flex-direction: row;
+                    }
+
+
+
+                    #mid {
+                        margin-top: .6em;
+
+                        @include ipadmini {
+                            margin-top: 0;
+                        }
+
+                    }
+
+                    .text {
+                        width: 50%;
+                        font-size: 70px;
+                        color: #006670;
+                        margin-top: 0;
+                        margin-bottom: -2em;
+                        font-family: Alfa Slab One;
+                        -webkit-text-stroke-width: 2px;
+                        -webkit-text-stroke-color: #00C3D6;
+                        text-shadow: 0px 0px 25px #00C3D6;
+    
+                        @include ipadmini {
+                            width: 80%;
+                            // margin-left: 1.5em;
+                            text-align: center;
+                        }
+
+                        @include bigdesktop() {
+                            font-size: 100px;
+                        }
+    
+                    }
+                    
+    
+    
+                    // .text-2 {
+                    //     font-size: 72px;
+                    //     color: #006670;
+                    //     margin-top: -.3em;
+                    //     margin-bottom: 0;
+                    //     font-family: Alfa Slab One;
+                    //     -webkit-text-stroke-width: 2px;
+                    //     -webkit-text-stroke-color: #00C3D6;
+                    //     text-shadow: 0px 0px 25px #00C3D6;
+    
+                    // }
+                    #text-3 {
+                        font-size: 72px;
+                        color: #484005;
+                        margin-left: 1em;
+                        margin-top: 1.2em;
+                        margin-bottom: 0;
+                        font-family: Alfa Slab One;
+                        -webkit-text-stroke-width: 2px;
+                        -webkit-text-stroke-color: yellow;
+                        text-shadow: 0px 0px 25px yellow;
+    
+                        @include ipadmini {
+                            margin-left: 0em;
+                        }
+
+                        @include bigdesktop() {
+                            font-size: 100px;
+                            margin-top: 1.4em;
+                        }
+                        
+    
+                    }
+                }
+
+
+
+            }
+            
+
+
+            .header-sec-3 {
+                width: 100%;
+                // width: 70%;
+
+
+                .header-3-text-box {
+                    display: flex;
+                    width: 100%;
+
+
+
+                    .header-3-text {
+                        width: 70%;
+                        font-size: 20px;
+                        font-weight: bolder;
+                        text-align: center;
+                        color: #00C3D6;
+                        margin: 0;
+                        margin-left: 3em;
+                        font-family: sans-serif;
+
+                        @include ipadmini() {
+                            margin-left: 6em;
+                        }
+
+                        @include bigdesktop() {
+                            margin-left: 7em;
+                            font-size: 25px;
+                        }
+
+    
+    
+                        .text-2 {
+                            margin-left: 1em;
+                            color: #FDCC07;
+                        }
+    
+                    }
+
+                }
+
+            }
+
+
+            .btn {
+                margin-top: 2.5em;
+                margin-left: 28%;
+                max-width: 50%;
+                display: flex;
+
+                .main-btn {
+                    width: 88%;
+                    height: 50px;
+                    margin-left: 1%;
+                    background: #FDCC07;
+                    font-weight: bolder;
+                    border: solid;
+                }
+            }
+
+            .terms {
+                margin-top: 2.5em;
+                margin-left: 15%;
+                width: 70%;
+
+
+
+
+                .terms-and {
+                    text-align: center;
+                    font-size: 16px;
+                    color: white;
+                    font-family: sans-serif;
+                    margin: 0;
+                }
+
+                @include bigdesktop() {
+                    font-size: 25px;
+                }
+            }
+
+
+            .timee-container {
+                    
+
+                .time-flex {
+
+
+                    @include ipadmini() {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    @include bigdesktop() {
+                    }
+
+                    .time-session {
+                        margin-top: 5em;
+                        display: flex;
+                        align-items: center;
+                        margin-left: 1em;
+                        width: 80%;
+                        gap: 1em;
+        
+        
+                        .fa-clock {
+                            font-size: 25px;
+                            color: white;
+                        }
+        
+                        .time-text {
+                            width: 100%;
+                            color: white;
+                            font-size: 20px;
+                            font-weight: bolder;
+                            font-family: sans-serif;
+                            margin: 0;
+
+
+                            @include ipadmini() {
+                                width: 120%;
+                            }
+
+                            @include bigdesktop() {
+                                font-size: 25px;
+                            }
+                        }
+        
+                    }
+        
+        
+                    .clock {
+                        width: 50%;
+                        display: flex;
+                        color: white;
+                        margin-left: 5em;
+                        gap: .5em;
+                        margin-top: 1em;
+
+                        @include ipadmini() {
+                            margin-top: 6em;
+                        }
+                        
+
+        
+                        .clock-box {
+                            display: flex;
+                            flex-direction: column;
+        
+        
+                            .digital-clock {
+                                color: white;
+                                margin: 0;
+                                font-size: 32px;
+                                font-weight: bolder;
+
+                                @include ipadmini() {
+                                    font-size: 20px;
+                                }
+
+                                @include bigdesktop() {
+                                    font-size: 50px;
+                                }
+                            }
+        
+                            .digital-name {
+                                margin: 0;
+
+                                @include bigdesktop() {
+                                    font-size: 40px;
+                                }
+                            }
+                        }
+        
+        
+                        .colon {
+                            color: white;
+                            font-size: 40px;
+                            margin-top: -.2em;
+
+                            @include bigdesktop() {
+                                font-size: 70px;
+                            }
+                        }
+                        
+                    }
+        
+                }
+
+
+                .line-1 {
+                    border: .4px solid white;
+                    margin-top: .4em;
+                    width: 100%;
+                }
+    
+                .line-2 {
+                    border: .01px solid rgba(255,255,255,.25);
+                    margin-top: .4em;
+                    width: 100%;
+                }
+    
+    
+                .accessories {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    width: 100%;
+                    margin-top: 1em;
+                    margin-left: .6em;
+                    gap: 1em;
+                    width: 90%;
+
+
+                    @include ipadmini() {
+                        margin-left: 2.5em;
+                    }
+
+                    // @include ipad() {
+                    //     height: 100px;
+                    // }
+                    @include desktop() {
+                        grid-template-columns: repeat(8, 1fr);
+                    }
+
+                    @include bigdesktop() {
+                        margin-top: 2.5em;
+                    }
+    
+                    .access-box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+    
+    
+                        .fa-solid{
+                            color: white;
+                            font-size: 25px;
+
+                            @include ipad() {
+                                font-size: 45px;
+                            }
+                        }
+                        
+    
+                        .A-text-box {
+                            display: flex;
+                            flex-direction: column;
+    
+    
+                            .access-text {
+                                color: white;
+                                font-size: 15px;
+                                text-align: center;
+                                font-weight: bolder;
+                                font-family: sans-serif;
+
+
+                                @include ipad() {
+                                    font-size: 25px;
+                                }
+
+                                @include desktop() {
+                                    font-size: 15px;
+                                }
+
+                                @include bigdesktop() {
+                                    font-size: 25px;
+                                }
+                            }
+                        }
+    
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        margin-top: 2em;
+        margin-left: 2em;
+        gap: 1em;
+        width: 90%;
+
+        @include ipadmini() {
+            margin-left: 6em;
+        }
+
+        @include ipad() {
+            padding-top: 2em;
+            padding-bottom: 5em;
+        }
+        @include desktop() {
+            grid-template-columns: repeat(8, 1fr);
+            margin-left: 4em;
+            padding-bottom: 2em;
+            gap: 2em;
+        }
+
+
+        .pay-bills {
+
+
+            @include bigdesktop() {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .fa-solid {
+                font-size: 35px;
+
+                @include ipadmini() {
+                    font-size: 45px;
+                }
+
+                @include desktop() {
+                    margin-left: .3em;
+                }
+            }
+            .fa-brands {
+                font-size: 35px;
+            }
+            .fa-regular {
+                font-size: 35px;
+            }
+
+            .bill-text-box {
+                display: flex;
+                flex-direction: column;
+
+
+                .bill-text {
+                    font-size: 15px;
+                    font-weight: bolder;
+
+                    @include ipad() {
+                        font-size: 25px;
+                    }
+                    @include desktop() {
+                        font-size: 25px;
+                        text-align: center;
+                    }
+
+                    @include bigdesktop() {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .cyber-security {
+        background-color: #FDCC07;
+        padding-bottom: 1.5em;
+
+
+        @include ipad() {
+            padding-bottom: 3em;
+        }
+
+        @include desktop() {
+            display: flex;
+        }
+
+
+        .cyber-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2em;
+
+            @include desktop() {
+                display: flex;
+                flex-direction: row;
+            }
+
+        
+
+
+            #text-cyber {
+                font-weight: 300;
+
+
+                @include desktop() {
+                    margin-right: 1em;
+                }
+
+                @include bigdesktop() {
+                    font-size: 30px;
+                }
+            }
+
+            .cyber-text {
+                margin: 0;
+                font-size: 20px;
+                font-family: sans-serif;
+                font-weight: bolder;
+                
+
+                @include ipad() {
+                    font-size: 27px;
+                }
+
+                @include desktop() {
+                    font-size: 22px;
+                }
+
+                @include bigdesktop() {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .cyber-btn-box {
+            width: 70%;
+            margin-top: 1.5em;
+
+
+            @include desktop() {
+                width: 30%;
+                margin-left: 12%;
+            }
+
+            .cyber-btn {
+                width: 100%;
+                height: 40px;
+                margin-left: 20%;
+                font-family: sans-serif;
+                font-weight: bolder;
+                color: green;
+                background: white;
+                border: 2px solid green;
+
+                @include ipad() {
+                    font-size: 20px;
+                }
+
+                @include desktop() {
+                    margin-left: 0%;
+                }
+
+                @include bigdesktop() {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+
+    .giving-more {
+        background: #01828E;
+        // height: 1750px;
+        height: 100%;
+        padding-bottom: 2em;
+
+
+        @include desktop() {
+            padding-bottom: 9em;
+        }
+
+
+        .giving-more-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3.5em;
+
+
+            .G-text-box {
+                width: 87%;
+                padding-bottom: 1.5em;
+
+                .giving-text {
+                    font-size: 30px;
+                    font-family: sans-serif;
+                    color: #FDCC07;
+                    font-weight: bolder;
+                    text-align: center;
+                    margin: 0;
+
+                    @include ipad() {
+                        font-size: 40px;
+                    }
+
+                    @include desktop() {
+                        font-size: 45px;
+                    }
+
+                    @include bigdesktop() {
+                        font-size: 60px;
+                    }
+                }
+
+                #text-giving {
+                    font-size: 15px;
+                    color: white;
+                    font-weight: 300;
+                    text-align: center;
+
+                    @include ipad() {
+                        font-size: 22px;
+                    }
+
+                    @include desktop() {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    @include bigdesktop() {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+
+
+        .family {
+            @include desktop() {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin-left: 10%;
+                margin-right: 10%;
+                gap: 2em;
+
+
+                @include bigdesktop() {
+                    
+                }
+            }
+
+
+            .family-box {
+                width: 82%;
+                margin-top: 1.5em;
+    
+
+                @include desktop() {
+                    width: 100%;
+                }
+    
+                .family-pix {
+                    width: 100%;
+                    margin-left: 11%;
+                }
+            }
+    
+            .Fam-2-part-box {
+                width: 100%;
+                background: white;
+                height: 253px;
+                margin-left: 11%;
+                margin-top: -.3em;
+
+                @include desktop() {
+                    width: 100%;
+                    margin-left: 1.7em;
+                    padding-bottom: 9em;
+                }
+
+                @include bigdesktop() {
+                    margin-left: 2.5em;
+                    height: 373px;
+                }
+    
+    
+                .Fam-2-part {
+                    width: 80%;
+                    padding-top: .4em;
+                    margin-bottom: -1em;
+
+                    @include desktop() {
+                        width: 100%;
+                    }
+    
+                    #text-fam-2 {
+                        font-size: 23px;
+
+
+                        @include desktop() {
+                            width: 70%;
+                            margin-left: 1em;
+                            font-size: 27.4px;
+                        }
+
+                        @include bigdesktop() {
+                            font-size: 40px;
+                        }
+                    }
+                    #text-2-fam {
+                        font-size: 15px;
+                        color: black;
+                        font-weight: 300;
+                        margin: 0;
+                        margin-left: 2em;
+                        width: 80%;
+
+                        @include ipad() {
+                            font-size: 20px;
+                        }
+
+                        @include desktop() {
+                            font-size: 20px;
+                            margin-left: 1em;
+                        }
+
+                        @include bigdesktop() {
+                            font-size: 30px;
+                        }
+                    }
+    
+                    .Fam-2-text {
+                        font-size: 32px;
+                        font-weight: bolder;
+                        color:  #01828E;
+                        margin-left: 1em;
+
+
+                        @include ipad() {
+                            font-size: 40px;
+                        }
+                        @include desktop() {
+                            width: 100%;
+                            margin-left: .5em;
+                            font-size: 33px;
+                        }
+
+                        @include bigdesktop() {
+                            font-size: 40px;
+                        }
+                    }
+                }
+    
+                .fam-btn-box {
+                    width: 80%;
+                    margin-top: 1.5em;
+
+
+                    @include desktop() {
+                        margin-top: 6em;
+                    }
+    
+    
+
+                    #btn-fam {
+                        margin-top: -5em;
+
+
+                        @include ipad() {
+                            margin-top: .2em;
+                        }
+
+                        
+                    }
+
+                    #famm {
+                        margin-top: 3.8em;
+                    }
+
+                    .fam-btn {
+                        width: 100%;
+                        margin-left: 10%;
+                        height: 35px;
+                        font-weight: bolder;
+                        background: #FDCC07;
+                        border: none;
+                        cursor: pointer;
+                        
+                    }
+
+                    
+                }
+            }
+        }
+
+    }
+
+    .deals {
+        display: flex;
+        justify-content: center;
+        margin-top: 5em;
+
+
+        .deals-text {
+            font-size: 27px;
+            font-family: sans-serif;
+            color: #006670;
+            margin: 0;
+
+
+            @include ipad() {
+                font-size: 39px;
+            }
+            @include desktop() {
+                font-size: 45px;
+            }
+        }
+    }
+
+
+    .tc-grid {
+
+        @include desktop() {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+
+        .tc-box {
+            padding-top: 2em;
+            width: 100%;
+    
+            .samsung-box {
+                width: 90%;
+        
+        
+                .samsung-pix {
+                    width: 100%;
+                    margin-left: 5%;
+                }
+            }
+    
+            .galazy {
+                width: 48.7%;
+                margin-left: 4em;
+
+
+                @include desktop() {
+                    width: 83%;
+                    margin-left: 2em;
+                }
+                
+    
+                .galazy-text {
+                    width: 100%;
+                    font-size: 20px;
+                    font-family: sans-serif;
+                    font-weight: bolder;
+
+
+                    @include ipad() {
+                        font-size: 26px;
+                    }
+                    @include desktop() {
+                        width: 100%;
+                        font-size: 30px;
+                    }
+                }
+    
+                #text-galazy {
+                    width: 100%;
+
+                    @include desktop() {
+                        width: 100%;
+                        font-size: 30px;
+                    }
+                }
+            }
+    
+            .tc-2 {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+
+                @include desktop() {
+                    margin: 0;
+                }
+
+                #laslass {
+
+                    @include ipad() {
+                        font-size: 25px;
+                        margin-left: 2.5em;
+                    }
+
+                    @include desktop() {
+                        margin-top: 2.5em;
+                        margin-bottom: 4.5em;
+                        line-height: 25px;
+                    }
+
+                    @include bigdesktop() {
+                    }
+                }
+                #laslas {
+                    @include desktop() {
+                        margin-top: 3.8em;
+                        margin-bottom: 4.5em;
+                        line-height: 25px;
+                    }
+                }
+
+                .tnc {
+                    display: none;
+
+                    @include desktop() {
+                        display: inline-block;
+                        color: #006670;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+                }
+                
+
+    
+                .tc-text-2 {
+                    font-size: 12px;
+                    font-family: sans-serif;
+                    font-weight: 200;
+                    margin-left: 5.5em;
+    
+    
+                    @include ipadmini() {
+                        font-size: 18px;
+                    }
+
+                    @include ipad() {
+                        font-size: 25px;
+                        margin-left: 3em;
+                    }
+
+                    @include desktop() {
+                        width: 120%;
+                        margin-left: 2em;
+                        line-height: 25px;
+                        margin-bottom: 1.8em;
+                    }
+
+                }
+
+                .down {
+                    font-size: 15px;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    margin-top: -.5em;
+                    color: #006670;
+
+                    @include desktop() {
+                        display: flex;
+                        justify-content: flex-end;
+                        width: 22%;
+                        margin-top: .1em;
+                        padding-bottom: 5em;
+                    }
+                }
+
+                #c-and-t {
+                    margin-top: -.9em;
+
+                    @include desktop() {
+                        margin-left: 2.8em;
+                    }
+                }
+    
+                .t-and-c {
+                    margin-left: 5em;
+                    color: #006670;
+                    font-family: sans-serif;
+                    font-weight: bolder;
+                    margin-top: -.5em;
+                    font-size: 13px;
+    
+                    @include ipadmini() {
+                        margin-left: 8em;
+                    }
+
+                    @include ipad() {
+                        font-size: 20px;
+                        margin-left: 3em;
+                    }
+                    @include desktop() {
+                        margin-left: 11em;
+                        margin-top: -5em;
+                        display: none;
+                    }
+
+                }
+            }
+        }
+    
+    }
+
+
+    
+
+    .tc-link-box {
+        padding-bottom: 1em;
+
+        
+        @include desktop() {
+            // margin-top: 4em;
+        }
+
+        
+
+        .tc-link {
+            text-decoration: none;
+            margin-left: 5em;
+            font-size: 15px;
+            font-family: sans-serif;
+            color: #006670;
+            font-weight: bolder;
+            cursor: pointer;
+    
+            @include ipadmini() {
+                margin-left: 6.5em;
+            }
+
+            @include ipad() {
+                font-size: 20px;
+            }
+    
+            @include desktop() {
+                margin-left: 2.2em;
+            }
+        }
+
+    }
+
+    .mre-dls {
+        width: 60%;
+        margin-left: 20%;
+
+        @include desktop() {
+            width: 90%;
+            margin-left: 10%;
+            margin-top: 3em;
+        }
+
+
+        .more-deal-text {
+            width: 100%;
+            background: #FDCC07;
+            border: none;
+            height: 35px;
+            font-weight: bolder;
+            font-family: sans-serif;
+            cursor: pointer;
+        }
+
+        #keep {
+            display: none;
+        }
+    }
+    
+
+
+    .optus-box {
+        background: #F1F4F6;
+        width: 100%;
+        margin-top: 3em;
+        height: 100%;
+        padding-bottom: 3em;
+
+
+        .optus {
+            display: flex;
+            justify-content: center;
+    
+    
+            .optus-text {
+                font-size: 30px;
+                font-weight: bolder;
+                font-family: sans-serif;
+                color: #006670;
+
+                @include ipad() {
+                    font-size: 40px;
+                }
+            }
+        }
+
+        .customer-box {
+            padding-bottom: 2em;
+
+
+
+            .cus-box-grid {
+
+                @include desktop() {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @include desktop() {
+                    margin-left: 6%;
+                    margin-right: 6%;
+                }
+            }
+            .customer-box-1 {
+                
+
+                .fa-person-chalkboard {
+                    font-size: 50px;
+                    display: flex;
+                    justify-content: center;
+                    color: #006670;
+
+                    @include ipad() {
+                        font-size: 50px;
+                    }
+                }
+                .fa-sliders {
+                    font-size: 50px;
+                    display: flex;
+                    justify-content: center;
+                    color: #006670;
+                }
+                .fa-creative-commons-share {
+                    font-size: 50px;
+                    display: flex;
+                    justify-content: center;
+                    color: #006670;
+                }
+            }
+
+            #keep {
+                display: none;
+
+                @include desktop() {
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: 3em;
+                }
+            }
+
+
+            .customer-box-2 {
+                width: 60%;
+
+                @include ipadmini {
+                }
+    
+                .customer-box-2-text {
+                    width: 100%;
+                    margin-left: 40%;
+                    font-size: 19px;
+                    font-family: sans-serif;
+                    font-weight: bolder;
+
+                    @include ipadmini {
+                        margin-left: 60%;
+                    }
+
+                    @include ipad() {
+                        font-size: 30px;
+                        margin-left: 53%;
+                    }
+                    @include desktop() {
+                        font-size: 20px;
+                        margin-left: 30%;
+                    }
+    
+                    .cont {
+                        color: #006670;
+                    }
+                }
+    
+            }
+    
+            .customer-box-3 {
+                width: 70%;
+    
+    
+                .customer-box-3 {
+                    width: 100%;
+                    text-align: center;
+                    margin-left: 20%;
+                    font-weight: 100;
+                    font-size: 17px;
+                    line-height: 25px;
+                }
+            }
+        }
+
+        .last-button-box {
+            max-width: 70%;
+
+            @include desktop() {
+                display: none;
+            }
+
+
+            .last-button {
+                width: 100%;
+                margin-left: 25%;
+                height: 35px;
+                background: #FDCC07;
+                border: none;
+                font-weight: bolder;
+                font-family: sans-serif;
+
+                @include ipad() {
+                    font-size: 20px;
+                }
+            }
+        }
+
+       
+    }
+
+
+    .footer {
+        width: 100%;
+        background: black;
+        height: 100%;
+
+
+        .desktop {
+            display: none;
+
+            @include desktop() {
+                // display: block;
+
+                display: flex;
+                justify-content: space-between;
+            }
+
+
+            .left-desk {
+                display: flex;
+                gap: 8em;
+                margin-left: 5%;
+
+
+                .desk-flex {
+
+
+
+
+                    .desk-head {
+                        font-size: 20px;
+                        color: white;
+                        font-family: sans-serif;
+                    }
+                    .text-desktop {
+                        color: #006670;
+                        font-family: sans-serif;
+                        font-weight: bolder;
+                        cursor: pointer;
+                    }
+                    .text-desktop:hover {
+                        color: orange;
+                    }
+                }
+            }
+
+            .right-desk {
+                color: white;
+                // margin-top: 4em;
+                margin-right: 9%;
+
+
+                .desk-head {
+                    font-size: 20px;
+                    font-family: sans-serif;
+                }
+
+                .d-icons-box {
+                    display: flex;
+                    gap: 2em;
+
+
+                    @include desktop() {
+                        gap: 1em;
+                    }
+
+
+                    .fa-f {
+                        border: 2px solid white;
+                        padding: .5em;
+                    }
+
+                    .fa-play {
+                        border: 2px solid white;
+                        padding: .1em .9em;
+                        height: 20px;
+                    }
+
+                    .fa-linkedin-in {
+                        display: flex;
+                        align-items: flex-end;
+                        border: 2px solid white;
+                        padding: .1em .4em;
+                        height: 30px;
+                    }
+
+                    .fa-camera-retro {
+                        display: flex;
+                        align-items: flex-end;
+                        border: 2px solid white;
+                        padding: .1em .4em;
+                        height: 30px;
+                    }
+                    #d-icons {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+
+        .d-footer {
+            display: none;
+
+
+            @include desktop() {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            
+
+
+            .foot {
+                display: flex;
+                gap: 3em;
+
+                .foot-text {
+                    color: #006670;
+                    font-family: sans-serif;
+                    font-weight: bold;
+
+                }
+            }
+
+            .copyw {
+                color: gray;
+            }
+        }
+
+
+
+
+        .keep-on-desktop {
+            @include desktop() {
+                display: none;
+            }
+
+
+            .footer-box-1 {
+                margin-left: 2em;
+    
+    
+                .dropdown {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    .fa-caret-down {
+                        color: #F1F4F6;
+                        margin-right: 2em;
+                    }
+        
+                    .footer-text {
+                        color: white;
+
+                        @include ipad() {
+                            font-size: 30px;
+                            font-family: sans-serif;
+                        }
+                    }
+                }
+    
+                .dropline {
+                    width: 93%;
+                    border: .1px solid rgba(255, 255, 255, 0.25);
+                }
+    
+    
+                .social-handle {
+                    color: #F1F4F6;
+
+                    @include ipad() {
+                        font-size: 30px;
+                    }
+                }
+    
+                .socials {
+                    display: flex;
+                    gap: 1em;
+                    margin-bottom: 2em;
+    
+                    .fa-f {
+                        border: 2px solid white;
+                        padding: .3em;
+                    }
+    
+                    .fa-linkedin-in {
+                        border: 2px solid white;
+                        display: flex;
+                        align-items: flex-end;
+                        padding: .2em .4em 0em 0em;
+                    }
+    
+                    .fa-camera-retro {
+                        border: 2px solid white;
+                        display: flex;
+                        align-items: flex-end;
+                        padding: 0em .4em 0em 0em;
+                    }
+                    .fa-play {
+                        border: 2px solid white;
+                        padding: .1em .9em .1em;
+                    }
+    
+                    #handle {
+                        color: #F1F4F6;
+                    }
+                }
+            }
+    
+            .last-footer {
+
+                @include desktop() {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 3em;
+                }
+                
+    
+    
+                .mini-footer {
+                    display: flex;
+                    gap: 1em;
+    
+    
+                    .last-footer-text {
+                        color: #006670;
+                        margin: 0;
+                        font-size: 12px;
+                        font-family: sans-serif;
+                        font-weight: bolder;
+                        margin-left: 2em;
+                        padding-bottom: 1em;
+                    }
+                }
+                
+            }
+    
+            .copyw {
+                margin-left: 2em;
+                padding-bottom: 2em;
+    
+                .copytext {
+                    color: gray;
+                    font-size: 13px;
+                    font-weight: lighter;
+                    font-family: sans-serif;
+    
+                }
+            }
+        }
+
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
