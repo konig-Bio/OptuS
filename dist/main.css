@@ -22,22 +22,22 @@ html .header-container .horizontal-nav .fa-phone-volume, body .header-container 
 }
 @media (min-width: 1024px) {
   html .header-container .horizontal-nav .fa-phone-volume, body .header-container .horizontal-nav .fa-phone-volume {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
   html .header-container .horizontal-nav .fa-magnifying-glass, body .header-container .horizontal-nav .fa-magnifying-glass {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
   html .header-container .horizontal-nav .fa-cart-shopping, body .header-container .horizontal-nav .fa-cart-shopping {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
   html .header-container .horizontal-nav .fa-user, body .header-container .horizontal-nav .fa-user {
-    font-size: 30px;
+    font-size: 0px;
   }
 }
 html .header-container .horizontal-nav .fa-bars, body .header-container .horizontal-nav .fa-bars {
@@ -208,7 +208,7 @@ html .section-two .section-two-content .content .who-box, body .section-two .sec
     width: 50%;
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 767px) {
   html .section-two .section-two-content .content .who-box, body .section-two .section-two-content .content .who-box {
     width: 200%;
     display: flex;
@@ -264,7 +264,7 @@ html .section-two .section-two-content .content .who-box .who, body .section-two
     font-size: 90px;
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 767px) {
   html .section-two .section-two-content .content .who-box .who, body .section-two .section-two-content .content .who-box .who {
     font-size: 50px;
   }
@@ -296,7 +296,7 @@ html .section-two .section-two-content .content .who-box .text-3, body .section-
     font-size: 90px;
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 767px) {
   html .section-two .section-two-content .content .who-box .text-3, body .section-two .section-two-content .content .who-box .text-3 {
     margin: 0;
     font-size: 50px;
