@@ -3,7 +3,7 @@
 
 $mobile: 767px;
 $smob: 480px;
-$bigmob: 540px;
+$bigmob: 767px;
 $ipad: 768px;
 $desktop: 1024px;
 $others: 1280px;
@@ -79,7 +79,7 @@ html,body {
                 transform: rotateY(180deg);
 
                 @include desktop() {
-                    font-size: 30px;
+                    font-size: 20px;
                 }
                
             }
@@ -88,20 +88,20 @@ html,body {
 
 
                 @include desktop() {
-                    font-size: 30px;
+                    font-size: 20px;
                 }
             }
 
             .fa-cart-shopping {
                 @include desktop() {
-                    font-size: 30px;
+                    font-size: 20px;
                 }
             }
 
             .fa-user {
 
                 @include desktop() {
-                    font-size: 30px;
+                    font-size: 0px;
                 }
             }
     
