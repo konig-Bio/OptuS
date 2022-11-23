@@ -2,6 +2,8 @@
 
 
 $mobile: 767px;
+$smob: 480px;
+$bigmob: 540px;
 $ipad: 768px;
 $desktop: 1024px;
 $others: 1280px;
@@ -12,6 +14,16 @@ $others: 1280px;
     }
 }
 
+@mixin smob {
+    @media (max-width: #{$smob}) {
+        @content;
+    }
+}
+@mixin bigmob {
+    @media (max-width: #{$bigmob}) {
+        @content;
+    }
+}
 
  @mixin ipad {
      @media (min-width: #{$ipad}) {
@@ -319,6 +331,16 @@ html,body {
                 .who-box {
                     width: 100%;
 
+
+                    @include smob() {
+                        width: 50%;
+                    }
+                    @include bigmob() {
+                        width: 200%;
+                        display: flex;
+                    }
+
+
                     @include ipad() {
                         display: flex;
                         flex-direction: row;
@@ -347,6 +369,11 @@ html,body {
                         -webkit-text-stroke-color: #00C3D6;
                         text-shadow: 0px 0px 25px #00C3D6;
     
+
+                        @include smob() {
+                            width: 60%;
+                            font-size: 60px;
+                        }
                         @include ipad() {
                             display: flex;
                             gap: .2em;
@@ -354,6 +381,10 @@ html,body {
 
                         @include desktop() {
                             font-size: 90px;
+                        }
+
+                        @include bigmob() {
+                            font-size: 50px;
                         }
 
                         
@@ -374,6 +405,11 @@ html,body {
                         -webkit-text-stroke-color: yellow;
                         text-shadow: 0px 0px 25px yellow;
 
+
+
+                        @include smob() {
+                            padding-left: 2em;
+                        }
                         @include ipad() {
                             margin-top: -.02em;
                             margin-left: 0;
@@ -381,6 +417,11 @@ html,body {
 
                         @include desktop() {
                             font-size: 90px;
+                        }
+
+                        @include bigmob() {
+                            margin: 0;
+                            font-size: 50px;
                         }
 
                     }
@@ -1430,6 +1471,7 @@ html,body {
     
                 .customer-box-2-text {
                     display: flex;
+                    gap: .4em;
                     width: 100%;
                     margin-left: 33%;
                     font-size: 16px;
@@ -1437,6 +1479,9 @@ html,body {
                     font-weight: bolder;
 
 
+                    @include bigmob() {
+                        // margin-left: 12.5em;
+                    }
                     @include ipad() {
                         font-size: 32px;
                     }

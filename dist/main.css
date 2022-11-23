@@ -198,6 +198,17 @@ html .section-two .section-two-content .content, body .section-two .section-two-
 html .section-two .section-two-content .content .who-box, body .section-two .section-two-content .content .who-box {
   width: 100%;
 }
+@media (max-width: 480px) {
+  html .section-two .section-two-content .content .who-box, body .section-two .section-two-content .content .who-box {
+    width: 50%;
+  }
+}
+@media (max-width: 540px) {
+  html .section-two .section-two-content .content .who-box, body .section-two .section-two-content .content .who-box {
+    width: 200%;
+    display: flex;
+  }
+}
 @media (min-width: 768px) {
   html .section-two .section-two-content .content .who-box, body .section-two .section-two-content .content .who-box {
     display: flex;
@@ -226,6 +237,12 @@ html .section-two .section-two-content .content .who-box .who, body .section-two
   -webkit-text-stroke-color: #00C3D6;
   text-shadow: 0px 0px 25px #00C3D6;
 }
+@media (max-width: 480px) {
+  html .section-two .section-two-content .content .who-box .who, body .section-two .section-two-content .content .who-box .who {
+    width: 60%;
+    font-size: 60px;
+  }
+}
 @media (min-width: 768px) {
   html .section-two .section-two-content .content .who-box .who, body .section-two .section-two-content .content .who-box .who {
     display: flex;
@@ -235,6 +252,11 @@ html .section-two .section-two-content .content .who-box .who, body .section-two
 @media (min-width: 1024px) {
   html .section-two .section-two-content .content .who-box .who, body .section-two .section-two-content .content .who-box .who {
     font-size: 90px;
+  }
+}
+@media (max-width: 540px) {
+  html .section-two .section-two-content .content .who-box .who, body .section-two .section-two-content .content .who-box .who {
+    font-size: 50px;
   }
 }
 html .section-two .section-two-content .content .who-box .text-3, body .section-two .section-two-content .content .who-box .text-3 {
@@ -248,6 +270,11 @@ html .section-two .section-two-content .content .who-box .text-3, body .section-
   -webkit-text-stroke-color: yellow;
   text-shadow: 0px 0px 25px yellow;
 }
+@media (max-width: 480px) {
+  html .section-two .section-two-content .content .who-box .text-3, body .section-two .section-two-content .content .who-box .text-3 {
+    padding-left: 2em;
+  }
+}
 @media (min-width: 768px) {
   html .section-two .section-two-content .content .who-box .text-3, body .section-two .section-two-content .content .who-box .text-3 {
     margin-top: -0.02em;
@@ -257,6 +284,12 @@ html .section-two .section-two-content .content .who-box .text-3, body .section-
 @media (min-width: 1024px) {
   html .section-two .section-two-content .content .who-box .text-3, body .section-two .section-two-content .content .who-box .text-3 {
     font-size: 90px;
+  }
+}
+@media (max-width: 540px) {
+  html .section-two .section-two-content .content .who-box .text-3, body .section-two .section-two-content .content .who-box .text-3 {
+    margin: 0;
+    font-size: 50px;
   }
 }
 html .section-two .section-two-content .content .text-22, body .section-two .section-two-content .content .text-22 {
@@ -1006,6 +1039,7 @@ html .optus-box .customer-box #keep, body .optus-box .customer-box #keep {
 }
 html .optus-box .customer-box .customer-box-2 .customer-box-2-text, body .optus-box .customer-box .customer-box-2 .customer-box-2-text {
   display: flex;
+  gap: 0.4em;
   width: 100%;
   margin-left: 33%;
   font-size: 16px;
