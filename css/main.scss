@@ -1,39 +1,41 @@
 @import url(//db.onlinewebfonts.com/c/72112afab388987941068c3f7a741a53?family=Mark+Pro+Heavy);
 
 
-$ipadmini: 481px;
-$ipad: 767px;
+$mobile: 767px;
+$ipad: 768px;
 $desktop: 1024px;
-$bigdesktop: 1280px;
+$others: 1280px;
 
-@mixin ipadmini {
-    @media (min-width: #{$ipadmini}) {
-        @content;
-    }
-};
-
-@mixin ipad {
-    @media (min-width: #{$ipad}) {
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
         @content;
     }
 }
+
+
+ @mixin ipad {
+     @media (min-width: #{$ipad}) {
+         @content;
+    }
+ }
 
 @mixin desktop {
-    @media (min-width: #{$desktop}) {
+     @media (min-width: #{$desktop}) {
+         @content;
+    }
+ }
+
+ @mixin others {
+    @media (min-width: #{$others}) {
         @content;
     }
-}
-
-@mixin bigdesktop {
-    @media (min-width: #{$bigdesktop}) {
-        @content;
-    }
-}
+ }
 
 
-body {
+html,body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 
 
 
@@ -45,9 +47,7 @@ body {
         margin-top: -.5em;
 
 
-        @include ipad() {
-            display: none;
-        }
+       
 
 
         .horizontal-nav {
@@ -58,11 +58,39 @@ body {
     
             .fa-phone-volume {
                 transform: rotateY(180deg);
+
+                @include desktop() {
+                    font-size: 30px;
+                }
+               
+            }
+
+            .fa-magnifying-glass {
+
+
+                @include desktop() {
+                    font-size: 30px;
+                }
+            }
+
+            .fa-cart-shopping {
+                @include desktop() {
+                    font-size: 30px;
+                }
+            }
+
+            .fa-user {
+
+                @include desktop() {
+                    font-size: 30px;
+                }
             }
     
             .fa-bars {
                 margin-left: 1em;
                 font-size: 22px;
+
+                
             }
             .logo {
                 font-size: 22px;
@@ -74,6 +102,189 @@ body {
     }
 
 
+    .hide-header {
+        display: none;
+        
+
+
+        @include desktop() {
+            display: block;
+            background: white;
+            margin-top: -8em;
+            border: 2px solid black;
+            
+        }
+
+
+       
+
+
+        .businesss-main-box {
+            display: flex;
+            justify-content: space-between;
+
+
+
+            .businx {
+                display: flex;
+                align-items: center;
+                gap: .8em;
+                margin-left: 1em;
+                margin-right: 1em;
+                cursor: pointer;
+
+
+                @include desktop() {
+                    display: flex;
+                }
+               
+                
+
+
+                .businx-text {
+                    
+
+                    @include desktop() {
+                        color: black;
+                        font-size: 20px;
+                    }
+
+                    @include others() {
+                        font-size: 30px;
+                    }
+
+                   
+
+                    
+                }
+                .businx-text:hover {
+                    color: orange;
+                    text-decoration: underline;
+                }
+
+
+
+                #text-businx {
+                    font-size: 21px;
+                    font-weight: bolder;
+                    color: #006670;
+
+
+                    @include desktop() {
+                        font-size: 30px;
+                    }
+
+                    @include others() {
+                        font-size: 40px;
+                    }
+
+                    
+                }
+            }
+
+            .sec-phase {
+                display: flex;
+                align-items: center;
+                gap: .2em;
+
+
+                @include others() {
+                    font-size: 30px;
+                }
+                
+
+
+                .sec-phase-text {
+                    font-size: 25px;
+                    color: black;
+
+                    @include desktop() {
+                        font-size: 20px;
+                    }
+                    
+                }
+
+                .sec-phase-text:hover {
+                    color: orange;
+                    text-decoration: underline;
+                }
+                .fa-phone-volume {
+                    transform: rotateY(180deg);
+
+                   
+                }
+                
+
+                .fa-magnifying-glass {
+                    
+                    
+                }
+                
+
+                .fa-cart-shopping {
+
+
+                    
+                }
+
+                .fa-user {
+
+
+                    
+                }
+            }
+
+            .sec-phase:hover {
+                color: orange;
+            }
+        }
+
+        .lline {
+            width: 100%;
+            border: .1px solid rgba($color: #000000, $alpha: .25);
+        }
+
+        .under-header {
+            display: flex;
+            justify-content: space-between;
+            gap: .4em;
+            margin-left: 1em;
+            margin-right: 1em;
+            cursor: pointer;
+
+
+           
+            .shop {
+                display: flex;
+                align-items: center;
+                gap: .4em;
+            }
+
+            p {
+
+                @include desktop() {
+                    color: black;
+                    font-size: 15px;
+                }
+
+                @include others() {
+                    font-size: 25px;
+                }
+
+                
+            }
+            p:hover {
+                color: orange;
+                text-decoration: underline;
+            }
+
+            .red {
+                color: red;
+            }
+        }
+       
+    }
+
     .section-two {
         margin-top: -.6em;
         width: 100%;
@@ -81,22 +292,11 @@ body {
         height: 1200px;
         padding-top: 1em;
 
-        @include ipadmini() {
-            height: 1000px;
-        }
-
-        @include ipad() {
-            height: 1100px
-        }
         @include desktop() {
-            height: 800px;
+            height: 1150px;
         }
 
-        @include bigdesktop() {
-            height: 1200px;
-        }
-
-
+       
         .section-two-content {
             
             width: 100%;
@@ -104,190 +304,7 @@ body {
 
 
 
-            .hide-header {
-                display: none;
-                background: white;
-                width: 99%;
-                border: 1px solid black;
-
-
-                @include ipad() {
-                    display: block;
-                    margin-top: -9em;
-                }
-
-
-                .businesss-main-box {
-                    display: flex;
-                    justify-content: space-between;
-
-
-
-                    .businx {
-                        display: flex;
-                        align-items: center;
-                        gap: .8em;
-                        margin-left: 1em;
-                        margin-right: 1em;
-                        cursor: pointer;
-
-
-                        @include desktop() {
-                            gap: .5em;
-                        }
-
-                        @include bigdesktop() {
-                            gap: .8em;
-                        }
-                        
-
-
-                        .businx-text {
-                            
-                            
-
-                            @include desktop() {
-                                font-size: 20px;
-                                font-family: sans-serif;
-                                font-weight: bold;
-                            }
-
-                            @include bigdesktop() {
-                                font-size: 25px;
-                            }
-
-                            
-                        }
-                        .businx-text:hover {
-                            color: orange;
-                            text-decoration: underline;
-                        }
-
-
-
-                        #text-businx {
-                            font-size: 21px;
-                            font-weight: bolder;
-                            color: #006670;
-
-
-                            @include desktop() {
-                                margin: 0;
-                                font-size: 35px;
-                            }
-                        }
-                    }
-
-                    .sec-phase {
-                        display: flex;
-                        align-items: center;
-                        gap: .2em;
-
-                        @include desktop() {
-                            font-size: 20px;
-                            font-weight: bold;
-                            font-family: sans-serif;
-                        }
-
-
-                        .sec-phase-text {
-                            font-size: 25px;
-
-                            @include desktop() {
-                                font-size: 20px;
-                            }
-                        }
-
-                        .sec-phase-text:hover {
-                            color: orange;
-                            text-decoration: underline;
-                        }
-                        .fa-phone-volume {
-                            transform: rotateY(180deg);
-
-                            @include bigdesktop() {
-                                font-size: 30px;
-                            }
-                        }
-                        
-
-                        .fa-magnifying-glass {
-                            
-                            @include bigdesktop() {
-                                font-size: 30px;
-                            }
-                        }
-                        
-
-                        .fa-cart-shopping {
-
-
-                            @include bigdesktop() {
-                                font-size: 30px;
-                            }
-                        }
-
-                        .fa-user {
-
-
-                            @include bigdesktop() {
-                                font-size: 30px;
-                            }
-                        }
-                    }
-
-                    .sec-phase:hover {
-                        color: orange;
-                    }
-                }
-
-                .lline {
-                    width: 100%;
-                    border: .1px solid rgba($color: #000000, $alpha: .25);
-                }
-
-                .under-header {
-                    display: flex;
-                    gap: .4em;
-                    margin-left: 1em;
-                    margin-right: 1em;
-                    cursor: pointer;
-
-
-                    @include desktop() {
-                        display: flex;
-                        justify-content: space-between;
-                        font-family: sans-serif;
-                    }
-
-                    @include bigdesktop() {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    .shop {
-                        display: flex;
-                        align-items: center;
-                        gap: .1em;
-                    }
-
-                    p {
-
-
-                        @include bigdesktop() {
-                            font-size: 22px;
-                        }
-                    }
-                    p:hover {
-                        color: orange;
-                        text-decoration: underline;
-                    }
-
-                    .red {
-                        color: red;
-                    }
-                }
-               
-            }
+            
 
 
 
@@ -299,20 +316,76 @@ body {
                 margin-top: -4em;
 
 
-                @include ipadmini {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 1em;
-                }
+                .who-box {
+                    width: 100%;
 
-                @include desktop() {
-                    margin-left: 10em;
-                }
+                    @include ipad() {
+                        display: flex;
+                        flex-direction: row;
+                    }
 
-                @include bigdesktop() {
-                    margin-left: 10em;
+                    @include desktop() {
+                        margin-left: 10%;
+                        margin-top: 8em;
+                    }
+
+                    @include others() {
+                        margin-left: 28%;
+                    }
+
+                    
+
+
+                    .who {
+                        width: 100%;
+                        font-size: 70px;
+                        color: #006670;
+                        margin-top: 0;
+                        margin-bottom: -2em;
+                        font-family: Alfa Slab One;
+                        -webkit-text-stroke-width: 2px;
+                        -webkit-text-stroke-color: #00C3D6;
+                        text-shadow: 0px 0px 25px #00C3D6;
+    
+                        @include ipad() {
+                            display: flex;
+                            gap: .2em;
+                        }
+
+                        @include desktop() {
+                            font-size: 90px;
+                        }
+
+                        
+
+                       
+
+
+                    }
+
+                    .text-3 {
+                        font-size: 72px;
+                        color: #484005;
+                        margin-left: .5em;
+                        margin-top: 1.2em;
+                        margin-bottom: 0;
+                        font-family: Alfa Slab One;
+                        -webkit-text-stroke-width: 2px;
+                        -webkit-text-stroke-color: yellow;
+                        text-shadow: 0px 0px 25px yellow;
+
+                        @include ipad() {
+                            margin-top: -.02em;
+                            margin-left: 0;
+                        }
+
+                        @include desktop() {
+                            font-size: 90px;
+                        }
+
+                    }
                 }
+                
 
 
                 .text-22 {
@@ -321,19 +394,14 @@ body {
                     flex-direction: column;
                     gap: 1em;
 
-                    @include ipadmini {
-                        display: flex;
-                        flex-direction: row;
-                    }
+                   
 
 
 
                     #mid {
-                        margin-top: .6em;
+                        margin-top: .8em;
 
-                        @include ipadmini {
-                            margin-top: 0;
-                        }
+                       
 
                     }
 
@@ -348,15 +416,7 @@ body {
                         -webkit-text-stroke-color: #00C3D6;
                         text-shadow: 0px 0px 25px #00C3D6;
     
-                        @include ipadmini {
-                            width: 80%;
-                            // margin-left: 1.5em;
-                            text-align: center;
-                        }
-
-                        @include bigdesktop() {
-                            font-size: 100px;
-                        }
+                       
     
                     }
                     
@@ -376,7 +436,7 @@ body {
                     #text-3 {
                         font-size: 72px;
                         color: #484005;
-                        margin-left: 1em;
+                        margin-left: .3em;
                         margin-top: 1.2em;
                         margin-bottom: 0;
                         font-family: Alfa Slab One;
@@ -384,14 +444,7 @@ body {
                         -webkit-text-stroke-color: yellow;
                         text-shadow: 0px 0px 25px yellow;
     
-                        @include ipadmini {
-                            margin-left: 0em;
-                        }
-
-                        @include bigdesktop() {
-                            font-size: 100px;
-                            margin-top: 1.4em;
-                        }
+                        
                         
     
                     }
@@ -420,18 +473,19 @@ body {
                         font-weight: bolder;
                         text-align: center;
                         color: #00C3D6;
-                        margin: 0;
+                        margin-top: 9em;
                         margin-left: 3em;
                         font-family: sans-serif;
 
-                        @include ipadmini() {
-                            margin-left: 6em;
-                        }
 
-                        @include bigdesktop() {
-                            margin-left: 7em;
+                        @include ipad() {
                             font-size: 25px;
                         }
+
+                        @include desktop() {
+                            margin-left: 15%;
+                        }
+                       
 
     
     
@@ -477,11 +531,13 @@ body {
                     color: white;
                     font-family: sans-serif;
                     margin: 0;
+
+                    @include ipad() {
+                        font-size: 20px;
+                    }
                 }
 
-                @include bigdesktop() {
-                    font-size: 25px;
-                }
+               
             }
 
 
@@ -490,14 +546,18 @@ body {
 
                 .time-flex {
 
-
-                    @include ipadmini() {
+                    @include desktop() {
                         display: flex;
                         align-items: center;
+                        margin-top: 4em;
+                        width: 100%;
                     }
 
-                    @include bigdesktop() {
+                    @include others() {
+                        margin-left: 5%;
                     }
+
+                   
 
                     .time-session {
                         margin-top: 5em;
@@ -508,6 +568,11 @@ body {
                         gap: 1em;
         
         
+                        @include desktop() {
+                            margin-right: 15em;
+                        }
+
+                        
                         .fa-clock {
                             font-size: 25px;
                             color: white;
@@ -522,12 +587,14 @@ body {
                             margin: 0;
 
 
-                            @include ipadmini() {
-                                width: 120%;
-                            }
-
-                            @include bigdesktop() {
+                            @include ipad() {
                                 font-size: 25px;
+                            }
+                           
+
+                            @include desktop() {
+                                width: 150%;
+                                font-size: 20px;
                             }
                         }
         
@@ -535,16 +602,15 @@ body {
         
         
                     .clock {
-                        width: 50%;
+                        width: 100%;
                         display: flex;
                         color: white;
-                        margin-left: 5em;
+                        margin-left: 3em;
                         gap: .5em;
                         margin-top: 1em;
 
-                        @include ipadmini() {
-                            margin-top: 6em;
-                        }
+                        
+                        
                         
 
         
@@ -559,21 +625,20 @@ body {
                                 font-size: 32px;
                                 font-weight: bolder;
 
-                                @include ipadmini() {
-                                    font-size: 20px;
-                                }
 
-                                @include bigdesktop() {
+                                @include ipad() {
                                     font-size: 50px;
                                 }
+                              
                             }
         
                             .digital-name {
                                 margin: 0;
 
-                                @include bigdesktop() {
-                                    font-size: 40px;
+                                @include ipad() {
+                                    font-size: 25px;
                                 }
+                               
                             }
                         }
         
@@ -583,9 +648,7 @@ body {
                             font-size: 40px;
                             margin-top: -.2em;
 
-                            @include bigdesktop() {
-                                font-size: 70px;
-                            }
+                           
                         }
                         
                     }
@@ -611,25 +674,19 @@ body {
                     grid-template-columns: repeat(4, 1fr);
                     width: 100%;
                     margin-top: 1em;
-                    margin-left: .6em;
-                    gap: 1em;
+                    margin-left: .4em;
+                    gap: .2em;
                     width: 90%;
 
 
-                    @include ipadmini() {
-                        margin-left: 2.5em;
-                    }
-
-                    // @include ipad() {
-                    //     height: 100px;
-                    // }
                     @include desktop() {
-                        grid-template-columns: repeat(8, 1fr);
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 4em;
+                        margin-left: 5%;
                     }
 
-                    @include bigdesktop() {
-                        margin-top: 2.5em;
-                    }
+                   
     
                     .access-box {
                         display: flex;
@@ -640,11 +697,14 @@ body {
     
                         .fa-solid{
                             color: white;
-                            font-size: 25px;
+                            font-size: 19px;
 
                             @include ipad() {
-                                font-size: 45px;
+                                font-size: 50px;
                             }
+                           
+                
+                           
                         }
                         
     
@@ -662,15 +722,11 @@ body {
 
 
                                 @include ipad() {
-                                    font-size: 25px;
+                                    font-size: 30px;
                                 }
-
+                               
                                 @include desktop() {
-                                    font-size: 15px;
-                                }
-
-                                @include bigdesktop() {
-                                    font-size: 25px;
+                                    font-size: 20px;
                                 }
                             }
                         }
@@ -689,50 +745,47 @@ body {
         grid-template-columns: repeat(4, 1fr);
         width: 100%;
         margin-top: 2em;
-        margin-left: 2em;
-        gap: 1em;
+        margin-left: 1em;
+        gap: .2em;
         width: 90%;
 
-        @include ipadmini() {
-            margin-left: 6em;
+        @include ipad() {
+            margin-left: 5em;
         }
 
-        @include ipad() {
-            padding-top: 2em;
-            padding-bottom: 5em;
-        }
         @include desktop() {
-            grid-template-columns: repeat(8, 1fr);
-            margin-left: 4em;
-            padding-bottom: 2em;
-            gap: 2em;
+            display: flex;
+            justify-content: space-between;
         }
+
+       
 
 
         .pay-bills {
 
 
-            @include bigdesktop() {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+           
             .fa-solid {
-                font-size: 35px;
+                font-size: 19px;
 
-                @include ipadmini() {
-                    font-size: 45px;
+                @include ipad() {
+                    font-size: 50px;
                 }
-
-                @include desktop() {
-                    margin-left: .3em;
-                }
+               
             }
             .fa-brands {
-                font-size: 35px;
+                font-size:19px;
+
+                @include ipad() {
+                    font-size: 50px;
+                }
             }
             .fa-regular {
-                font-size: 35px;
+                font-size: 19px;
+
+                @include ipad() {
+                    font-size: 50px;
+                }
             }
 
             .bill-text-box {
@@ -744,17 +797,11 @@ body {
                     font-size: 15px;
                     font-weight: bolder;
 
-                    @include ipad() {
-                        font-size: 25px;
-                    }
-                    @include desktop() {
-                        font-size: 25px;
-                        text-align: center;
-                    }
 
-                    @include bigdesktop() {
-                        font-size: 30px;
+                    @include ipad() {
+                        font-size: 20px;
                     }
+                   
                 }
             }
         }
@@ -765,13 +812,9 @@ body {
         padding-bottom: 1.5em;
 
 
-        @include ipad() {
-            padding-bottom: 3em;
-        }
+       
 
-        @include desktop() {
-            display: flex;
-        }
+        
 
 
         .cyber-box {
@@ -780,10 +823,7 @@ body {
             align-items: center;
             padding-top: 2em;
 
-            @include desktop() {
-                display: flex;
-                flex-direction: row;
-            }
+           
 
         
 
@@ -792,13 +832,7 @@ body {
                 font-weight: 300;
 
 
-                @include desktop() {
-                    margin-right: 1em;
-                }
-
-                @include bigdesktop() {
-                    font-size: 30px;
-                }
+               
             }
 
             .cyber-text {
@@ -809,16 +843,10 @@ body {
                 
 
                 @include ipad() {
-                    font-size: 27px;
+                    font-size: 30px;
                 }
 
-                @include desktop() {
-                    font-size: 22px;
-                }
-
-                @include bigdesktop() {
-                    font-size: 25px;
-                }
+               
             }
         }
 
@@ -827,10 +855,7 @@ body {
             margin-top: 1.5em;
 
 
-            @include desktop() {
-                width: 30%;
-                margin-left: 12%;
-            }
+            
 
             .cyber-btn {
                 width: 100%;
@@ -843,16 +868,11 @@ body {
                 border: 2px solid green;
 
                 @include ipad() {
-                    font-size: 20px;
-                }
-
-                @include desktop() {
-                    margin-left: 0%;
-                }
-
-                @include bigdesktop() {
+                    height: 50px;
                     font-size: 30px;
                 }
+
+                
             }
         }
     }
@@ -864,10 +884,12 @@ body {
         height: 100%;
         padding-bottom: 2em;
 
-
         @include desktop() {
-            padding-bottom: 9em;
+            padding-bottom: 6em;
         }
+
+
+       
 
 
         .giving-more-box {
@@ -893,13 +915,7 @@ body {
                         font-size: 40px;
                     }
 
-                    @include desktop() {
-                        font-size: 45px;
-                    }
-
-                    @include bigdesktop() {
-                        font-size: 60px;
-                    }
+                    
                 }
 
                 #text-giving {
@@ -909,35 +925,21 @@ body {
                     text-align: center;
 
                     @include ipad() {
-                        font-size: 22px;
+                        font-size: 25px;
                     }
 
-                    @include desktop() {
-                        font-size: 20px;
-                        font-weight: bold;
-                    }
-
-                    @include bigdesktop() {
-                        font-size: 30px;
-                    }
+                   
                 }
             }
         }
 
 
         .family {
-            @include desktop() {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                margin-left: 10%;
-                margin-right: 10%;
-                gap: 2em;
-
-
-                @include bigdesktop() {
-                    
-                }
-            }
+           @include desktop() {
+            display: flex;
+            gap: 1.5em;
+            margin-right: 7%;
+           }
 
 
             .family-box {
@@ -945,9 +947,7 @@ body {
                 margin-top: 1.5em;
     
 
-                @include desktop() {
-                    width: 100%;
-                }
+               
     
                 .family-pix {
                     width: 100%;
@@ -958,20 +958,15 @@ body {
             .Fam-2-part-box {
                 width: 100%;
                 background: white;
-                height: 253px;
+                height: 268px;
                 margin-left: 11%;
                 margin-top: -.3em;
 
                 @include desktop() {
-                    width: 100%;
-                    margin-left: 1.7em;
-                    padding-bottom: 9em;
+                    height: 500px;
                 }
 
-                @include bigdesktop() {
-                    margin-left: 2.5em;
-                    height: 373px;
-                }
+               
     
     
                 .Fam-2-part {
@@ -979,23 +974,16 @@ body {
                     padding-top: .4em;
                     margin-bottom: -1em;
 
-                    @include desktop() {
-                        width: 100%;
-                    }
+                    
     
                     #text-fam-2 {
                         font-size: 23px;
 
 
                         @include desktop() {
-                            width: 70%;
-                            margin-left: 1em;
-                            font-size: 27.4px;
+                            font-size: 32px;
                         }
-
-                        @include bigdesktop() {
-                            font-size: 40px;
-                        }
+                       
                     }
                     #text-2-fam {
                         font-size: 15px;
@@ -1006,17 +994,10 @@ body {
                         width: 80%;
 
                         @include ipad() {
-                            font-size: 20px;
+                            font-size: 25px;
                         }
 
-                        @include desktop() {
-                            font-size: 20px;
-                            margin-left: 1em;
-                        }
-
-                        @include bigdesktop() {
-                            font-size: 30px;
-                        }
+                       
                     }
     
                     .Fam-2-text {
@@ -1027,17 +1008,14 @@ body {
 
 
                         @include ipad() {
-                            font-size: 40px;
-                        }
-                        @include desktop() {
-                            width: 100%;
-                            margin-left: .5em;
-                            font-size: 33px;
+                            font-size: 42px;
                         }
 
-                        @include bigdesktop() {
-                            font-size: 40px;
+                        @include desktop() {
+                            font-size: 32px;
                         }
+                        
+                       
                     }
                 }
     
@@ -1045,10 +1023,12 @@ body {
                     width: 80%;
                     margin-top: 1.5em;
 
-
-                    @include desktop() {
-                        margin-top: 6em;
+                    @include ipad() {
+                        margin-top: 3em;
                     }
+
+
+                    
     
     
 
@@ -1056,15 +1036,25 @@ body {
                         margin-top: -5em;
 
 
-                        @include ipad() {
-                            margin-top: .2em;
-                        }
+                        
+                        
 
                         
                     }
 
                     #famm {
+                        display: none;
                         margin-top: 3.8em;
+                    }
+                    #fammm {
+                        display: none;
+
+                        @include desktop() {
+                            display: block;
+                            font-size: 20px;
+                            margin-top: 6em;
+                        }
+                       
                     }
 
                     .fam-btn {
@@ -1075,6 +1065,15 @@ body {
                         background: #FDCC07;
                         border: none;
                         cursor: pointer;
+
+                        @include ipad() {
+                            height: 45px;
+                            font-size: 25px;
+                        }
+
+                        @include desktop() {
+                            display: none;
+                        }
                         
                     }
 
@@ -1099,11 +1098,10 @@ body {
 
 
             @include ipad() {
-                font-size: 39px;
+                font-size: 37px;
             }
-            @include desktop() {
-                font-size: 45px;
-            }
+           
+            
         }
     }
 
@@ -1111,16 +1109,17 @@ body {
     .tc-grid {
 
         @include desktop() {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            margin-left: 10%;
-            margin-right: 10%;
+            display: flex;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
 
         .tc-box {
             padding-top: 2em;
             width: 100%;
+
+            
     
             .samsung-box {
                 width: 90%;
@@ -1137,10 +1136,7 @@ body {
                 margin-left: 4em;
 
 
-                @include desktop() {
-                    width: 83%;
-                    margin-left: 2em;
-                }
+               
                 
     
                 .galazy-text {
@@ -1151,21 +1147,21 @@ body {
 
 
                     @include ipad() {
-                        font-size: 26px;
-                    }
-                    @include desktop() {
-                        width: 100%;
                         font-size: 30px;
                     }
+
+                    @include desktop() {
+                        font-size: 20px;
+                        margin-left: -2em;
+                    }
+                    
+                   
                 }
     
                 #text-galazy {
                     width: 100%;
 
-                    @include desktop() {
-                        width: 100%;
-                        font-size: 30px;
-                    }
+                    
                 }
             }
     
@@ -1175,42 +1171,30 @@ body {
                 width: 70%;
 
                 @include desktop() {
-                    margin: 0;
+                    width: 100%;
                 }
+                
 
                 #laslass {
 
-                    @include ipad() {
-                        font-size: 25px;
-                        margin-left: 2.5em;
-                    }
+                    
 
-                    @include desktop() {
-                        margin-top: 2.5em;
-                        margin-bottom: 4.5em;
-                        line-height: 25px;
-                    }
+                   
 
-                    @include bigdesktop() {
-                    }
+                   
                 }
                 #laslas {
+                    
+
                     @include desktop() {
-                        margin-top: 3.8em;
-                        margin-bottom: 4.5em;
-                        line-height: 25px;
+                        margin-top: 2em;
                     }
                 }
 
                 .tnc {
                     display: none;
 
-                    @include desktop() {
-                        display: inline-block;
-                        color: #006670;
-                        font-size: 16px;
-                        font-weight: bold;
-                    }
+                    
 
                 }
                 
@@ -1223,22 +1207,28 @@ body {
                     margin-left: 5.5em;
     
     
-                    @include ipadmini() {
-                        font-size: 18px;
-                    }
-
                     @include ipad() {
                         font-size: 25px;
-                        margin-left: 3em;
                     }
 
                     @include desktop() {
-                        width: 120%;
-                        margin-left: 2em;
-                        line-height: 25px;
-                        margin-bottom: 1.8em;
+                        font-size: 17px;
+                        margin-left: 1.5em;
                     }
 
+                    
+
+                }
+
+                #liink {
+
+                    @include desktop() {
+                        padding-bottom: 4em;
+                    }
+
+                    @include others() {
+                        padding-bottom: 5.6em;
+                    }
                 }
 
                 .down {
@@ -1248,21 +1238,13 @@ body {
                     margin-top: -.5em;
                     color: #006670;
 
-                    @include desktop() {
-                        display: flex;
-                        justify-content: flex-end;
-                        width: 22%;
-                        margin-top: .1em;
-                        padding-bottom: 5em;
-                    }
+                   
                 }
 
                 #c-and-t {
                     margin-top: -.9em;
 
-                    @include desktop() {
-                        margin-left: 2.8em;
-                    }
+                   
                 }
     
                 .t-and-c {
@@ -1273,19 +1255,17 @@ body {
                     margin-top: -.5em;
                     font-size: 13px;
     
-                    @include ipadmini() {
-                        margin-left: 8em;
+                    @include ipad() {
+                        font-size: 26px;
                     }
 
-                    @include ipad() {
-                        font-size: 20px;
-                        margin-left: 3em;
-                    }
                     @include desktop() {
-                        margin-left: 11em;
-                        margin-top: -5em;
-                        display: none;
+                        font-size: 15px;
+                        margin-top: -.9em;
+                        margin-left: 1.5em;
+                        padding-bottom: 4.8em;
                     }
+                   
 
                 }
             }
@@ -1300,9 +1280,7 @@ body {
         padding-bottom: 1em;
 
         
-        @include desktop() {
-            // margin-top: 4em;
-        }
+       
 
         
 
@@ -1315,18 +1293,19 @@ body {
             font-weight: bolder;
             cursor: pointer;
     
-            @include ipadmini() {
-                margin-left: 6.5em;
+            @include ipad() {
+                font-size: 30px;
             }
 
-            @include ipad() {
-                font-size: 20px;
+            @include desktop() {
+                font-size: 18px;
+                margin-left: 4em;
             }
     
-            @include desktop() {
-                margin-left: 2.2em;
-            }
+            
         }
+
+        
 
     }
 
@@ -1334,11 +1313,7 @@ body {
         width: 60%;
         margin-left: 20%;
 
-        @include desktop() {
-            width: 90%;
-            margin-left: 10%;
-            margin-top: 3em;
-        }
+        
 
 
         .more-deal-text {
@@ -1349,6 +1324,17 @@ body {
             font-weight: bolder;
             font-family: sans-serif;
             cursor: pointer;
+
+
+            @include ipad() {
+                height: 45px;
+                font-size: 25px;
+            }
+
+            @include desktop() {
+                font-size: 18px;
+                margin-top: 4em;
+            }
         }
 
         #keep {
@@ -1377,31 +1363,32 @@ body {
                 font-family: sans-serif;
                 color: #006670;
 
+
                 @include ipad() {
                     font-size: 40px;
                 }
+               
             }
         }
 
         .customer-box {
             padding-bottom: 2em;
 
+            
+
 
 
             .cus-box-grid {
 
                 @include desktop() {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
+                    display: flex;
+                    margin-right: 3%;
                 }
-
-                @include desktop() {
-                    margin-left: 6%;
-                    margin-right: 6%;
-                }
+                
             }
             .customer-box-1 {
                 
+            
 
                 .fa-person-chalkboard {
                     font-size: 50px;
@@ -1409,9 +1396,7 @@ body {
                     justify-content: center;
                     color: #006670;
 
-                    @include ipad() {
-                        font-size: 50px;
-                    }
+                   
                 }
                 .fa-sliders {
                     font-size: 50px;
@@ -1432,37 +1417,38 @@ body {
 
                 @include desktop() {
                     display: inline-block;
-                    width: 100%;
-                    margin-top: 3em;
+                    margin-left: 2.5em; 
+                    margin-top: 4em;                   
                 }
+                
             }
 
 
             .customer-box-2 {
-                width: 60%;
 
-                @include ipadmini {
-                }
+               
     
                 .customer-box-2-text {
+                    display: flex;
                     width: 100%;
-                    margin-left: 40%;
-                    font-size: 19px;
+                    margin-left: 33%;
+                    font-size: 16px;
                     font-family: sans-serif;
                     font-weight: bolder;
 
-                    @include ipadmini {
-                        margin-left: 60%;
-                    }
 
                     @include ipad() {
-                        font-size: 30px;
-                        margin-left: 53%;
+                        font-size: 32px;
                     }
+
                     @include desktop() {
-                        font-size: 20px;
-                        margin-left: 30%;
+                        margin-top: .5em;
+                        font-size: 27px;
+                        margin-left: 2em;
+                        
                     }
+                    
+                   
     
                     .cont {
                         color: #006670;
@@ -1482,6 +1468,18 @@ body {
                     font-weight: 100;
                     font-size: 17px;
                     line-height: 25px;
+
+
+                    @include ipad() {
+                        font-size: 33px;
+                        font-weight: 500;
+                    }
+
+                    @include desktop() {
+                        font-size: 25px;
+                        font-family: sans-serif;
+                        margin-left: 3em;
+                    }
                 }
             }
         }
@@ -1492,6 +1490,7 @@ body {
             @include desktop() {
                 display: none;
             }
+            
 
 
             .last-button {
@@ -1502,10 +1501,19 @@ body {
                 border: none;
                 font-weight: bolder;
                 font-family: sans-serif;
+                cursor: pointer;
 
                 @include ipad() {
+                    height: 45px;
+                    font-size: 25px;
+                }
+
+                @include desktop() {
                     font-size: 20px;
                 }
+
+                
+                
             }
         }
 
@@ -1523,11 +1531,10 @@ body {
             display: none;
 
             @include desktop() {
-                // display: block;
-
                 display: flex;
                 justify-content: space-between;
             }
+            
 
 
             .left-desk {
@@ -1538,6 +1545,9 @@ body {
 
                 .desk-flex {
 
+                    @include desktop() {
+                        
+                    }
 
 
 
@@ -1563,6 +1573,7 @@ body {
                 // margin-top: 4em;
                 margin-right: 9%;
 
+                
 
                 .desk-head {
                     font-size: 20px;
@@ -1573,10 +1584,12 @@ body {
                     display: flex;
                     gap: 2em;
 
-
                     @include desktop() {
-                        gap: 1em;
+                        gap: .5em;
                     }
+
+
+                    
 
 
                     .fa-f {
@@ -1616,13 +1629,14 @@ body {
         .d-footer {
             display: none;
 
-
             @include desktop() {
                 display: flex;
                 justify-content: space-between;
-                margin-left: 5%;
-                margin-right: 5%;
+                margin-left: 2em;
+                margin-right: 2em;
             }
+
+           
             
 
 
@@ -1634,6 +1648,8 @@ body {
                     color: #006670;
                     font-family: sans-serif;
                     font-weight: bold;
+
+                    
 
                 }
             }
@@ -1647,6 +1663,7 @@ body {
 
 
         .keep-on-desktop {
+            
             @include desktop() {
                 display: none;
             }
@@ -1664,6 +1681,11 @@ body {
                     .fa-caret-down {
                         color: #F1F4F6;
                         margin-right: 2em;
+
+
+                        @include ipad() {
+                            font-size: 30px;
+                        }
                     }
         
                     .footer-text {
@@ -1671,8 +1693,8 @@ body {
 
                         @include ipad() {
                             font-size: 30px;
-                            font-family: sans-serif;
                         }
+                       
                     }
                 }
     
@@ -1688,6 +1710,8 @@ body {
                     @include ipad() {
                         font-size: 30px;
                     }
+
+                    
                 }
     
                 .socials {
@@ -1698,6 +1722,10 @@ body {
                     .fa-f {
                         border: 2px solid white;
                         padding: .3em;
+
+                        @include ipad() {
+                            font-size: 30px;
+                        }
                     }
     
                     .fa-linkedin-in {
@@ -1705,6 +1733,11 @@ body {
                         display: flex;
                         align-items: flex-end;
                         padding: .2em .4em 0em 0em;
+
+
+                        @include ipad() {
+                            font-size: 30px;
+                        }
                     }
     
                     .fa-camera-retro {
@@ -1720,17 +1753,16 @@ body {
     
                     #handle {
                         color: #F1F4F6;
+
+                        @include ipad() {
+                            font-size: 30px;
+                        }
                     }
                 }
             }
     
             .last-footer {
 
-                @include desktop() {
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 3em;
-                }
                 
     
     
@@ -1747,6 +1779,11 @@ body {
                         font-weight: bolder;
                         margin-left: 2em;
                         padding-bottom: 1em;
+
+
+                        @include ipad() {
+                            font-size: 24px;
+                        }
                     }
                 }
                 
@@ -1761,6 +1798,10 @@ body {
                     font-size: 13px;
                     font-weight: lighter;
                     font-family: sans-serif;
+
+                    @include ipad() {
+                        font-size: 26px;
+                    }
     
                 }
             }
