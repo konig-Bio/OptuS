@@ -7,6 +7,7 @@ $bigmob: 540px;
 $ipad: 768px;
 $desktop: 1024px;
 $others: 1280px;
+$higher: 1721px;
 
 @mixin mobile {
     @media (max-width: #{$mobile}) {
@@ -39,6 +40,12 @@ $others: 1280px;
 
  @mixin others {
     @media (min-width: #{$others}) {
+        @content;
+    }
+ }
+
+ @mixin higher {
+    @media (min-width: #{$higher}) {
         @content;
     }
  }
@@ -148,6 +155,10 @@ html,body {
 
                 @include desktop() {
                     display: flex;
+                }
+
+                @include higher() {
+                    gap: 5em;
                 }
                
                 
@@ -355,6 +366,10 @@ html,body {
                         margin-left: 28%;
                     }
 
+                    @include higher() {
+                        margin-left: 55%;
+                    }
+
                     
 
 
@@ -397,7 +412,7 @@ html,body {
                     .text-3 {
                         font-size: 72px;
                         color: #484005;
-                        margin-left: .5em;
+                        margin-left: -.3em;
                         margin-top: 1.2em;
                         margin-bottom: 0;
                         font-family: Alfa Slab One;
@@ -422,6 +437,10 @@ html,body {
                         @include bigmob() {
                             margin: 0;
                             font-size: 50px;
+                        }
+
+                        @include higher() {
+                            margin-right: 20%;
                         }
 
                     }
@@ -1461,6 +1480,10 @@ html,body {
                     margin-left: 2.5em; 
                     margin-top: 4em;                   
                 }
+
+                @include higher() {
+                    width: 60%;
+                }
                 
             }
 
@@ -1491,6 +1514,10 @@ html,body {
                         font-size: 27px;
                         margin-left: 2em;
                         
+                    }
+
+                    @include higher() {
+                        margin-left: 29%;
                     }
                     
                    
